@@ -1,0 +1,333 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html{
+    scroll-behavior: smooth;
+    font-family: Montserrat, Arial, sans-serif;
+  }
+  
+  :root {
+    --primary-color: #2c3e50;
+    --secondary-color: #3498db;
+    --accent-color: #e74c3c;
+    --text-color: #333;
+    --light-bg: #f8f9fa;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    --primary: #2563eb;
+    --primary-light: #3b82f6;
+    --secondary: #7c3aed;
+    --accent: #06b6d4;
+    --text-dark: #1f2937;
+    --text-light: #6b7280;
+    --light-bg: #f8fafc;
+    --white: #ffffff;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --shadow-lg: 0 10px 25px -5px rgba(0,0,0,0.1);
+    --radius: 12px;
+    --transition: all 0.3s ease;
+  }
+  
+  body {
+      overflow-x: hidden;
+  }
+  
+  body.no-scroll{
+    overflow-y:hidden ;
+  }
+  
+  body.no-scroll-with-navmenu {
+    overflow: hidden;
+  }
+  
+  #backToTop{
+    position: fixed;
+    bottom: 15px;
+    right: 15px;
+    background: #f54d4d;
+    color: #fff;
+    padding: 12px 16px;
+    font-size: 22px;
+    cursor: pointer;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.9s;
+    z-index: 1000;
+  }
+  
+  #backToTop.show{
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  
+  
+  .navbar {
+    background-color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    /* width: 100%; */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    width: 200px;
+  }
+  
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    position: relative;
+  }
+  
+  .nav-menu-img{
+    display: none;
+    width: 200px;
+  }
+  
+  .nav-menu-img {
+    margin-left: 0;
+  }
+  
+  
+  .nav-item {
+    /* position: fixed; */
+  }
+  
+  .nav-menu li a {
+    text-decoration: none;
+    color: #666;
+    padding: 10px 15px;
+    display: block;
+    transition: color 0.3s;
+    font-size: 1.3rem;
+    font-weight: 500;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  }
+  
+  
+  .nav-menu li a:hover {
+    color: var(--secondary-color);
+  }
+  
+  .nav-menu li a.active {
+    color: var(--secondary-color);
+  }
+  
+  .nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  .nav-btn button {
+    padding: 10px 20px;
+    border-radius: 4px;
+    text-decoration: none;
+    /* font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, */
+      /* Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif; */
+    font-size: 1rem;
+    font-weight: 500;
+    background: transparent;
+    cursor: pointer;
+    border: 1px solid var(--secondary-color);
+    box-shadow: var(--shadow);
+    border-radius: 100px;
+    transition: all 0.2s;
+  }
+  .nav-right{
+    display: flex;
+  }
+  .nav-btn button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+  .hamburger {
+    display: none;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 5px;
+    color: #666;
+  }
+  
+  .getintouch{
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 322px;
+    padding: 15px 10px;
+    border: none;
+    background-color: #e74c3c;
+    color: white;
+    font-family: Montserrat, Arial, sans-serif;
+    font-size: 16PX;
+    font-weight: 500;
+    border-radius: 4PX;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    display: none;
+    text-decoration: none;
+  }
+  
+  /* .mobile-only {
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+    padding: 15px 10px;
+    background: #e74c3c;
+    color: #fff;
+    border-radius: 6px;
+  } */
+  
+  
+  .mobile-btn{
+    display: flex;
+    align-items: center;
+    padding-right: 20px;
+    display: none;
+    /* position: relative; */
+  }
+  
+  /* .offer-dot{
+    width: 10px;
+    height: 10px;
+    background-color: red;
+    border-radius: 50%;
+    position: absolute;
+    top: 10%;
+    right:0;
+  } */
+  
+  .mobile-btn i{
+    font-size: 1.5rem;
+  }
+  
+ 
+
+  
+  
+  
+  @media screen and (max-width: 900px) {
+
+    
+    .nav-container {
+      padding: 0 15px;
+    }
+    .logo img {
+      width: 200px;
+    }
+    .hamburger {
+      display: block;
+      z-index: 1001;
+    }
+  
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      left: -100%; /* Changed from right to left */
+      width: 100%;
+      /* max-width: 300px; */
+      height: 100vh;
+      background: white;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 30px 30px 30px;
+      box-shadow: 5px 0 15px rgba(0, 0, 0, 0.1); /* Shadow on right side now */
+      transition: left 0.3s ease-in-out; /* Changed from right to left */
+      gap: 0;
+    }
+  
+    .nav-menu.active {
+      left: 0; /* Changed from right to left */
+    }
+  
+    .nav-menu-img{
+      display: block;
+      margin-bottom: 20px;
+    }
+    .nav-item {
+      width: 100%;
+      border-bottom: 1px solid #f0f0f0;
+    }
+  
+    .mobile-btn{
+      display: flex;
+      text-decoration: none;
+      color: #666;
+    }
+  
+    .nav-btn{
+      display: none;
+    }
+    .nav-menu li a {
+      padding: 15px 0;
+      font-size: 1.2rem;
+      width: 100%;
+    }
+    .nav-btn.desktop {
+      display: none;
+    }
+    .nav-btn.mobile {
+      display: block;
+      width: 100%;
+      margin-top: 20px;
+    }
+  
+    .nav-btn.mobile button {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
+    }
+
+  
+    .getintouch{
+      display: block;
+    }
+    
+  }
+  
+  
+  
+  @media screen and (max-width:767px){
+  
+    .navbar{
+      box-shadow: none;
+    }
+  
+  
+  }
+  @media screen and (max-width: 480px) {
+    .logo img {
+      width: 200px;
+    }
+    .nav-menu {
+      /* width: 85%; */
+    }
+  }
