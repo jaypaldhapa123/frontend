@@ -97,7 +97,7 @@ contactForm.addEventListener("submit", function (event) {
 
     // send data into backend
 
-    fetch("https://backend-nn0g.onrender.com", {
+    fetch("https://backend-nn0g.onrender.com/formdata", {
       method: "post",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify(formdata),
