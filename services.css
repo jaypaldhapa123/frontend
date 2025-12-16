@@ -314,7 +314,7 @@ body.no-scroll-with-navmenu {
         rgba(0,0,0,0.6),
         rgba(0,0,0,0.8)
     ),
-    url(/public/images/services.png);
+    url(images/services.png);
     padding: 100px 0 50px 0;
     /* background-image: url(/download.png); */
 }
