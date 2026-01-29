@@ -98,7 +98,7 @@ contactForm.addEventListener("submit", function (event) {
     // send data into backend
 
     //fetch("https://backend-production-95f99.up.railway.app/formdata", {
-    fetch("backend-production-b013.up.railway.app/formdata", {
+    fetch("https://backend-production-b013.up.railway.app/formdata", {
       method: "post",
       headers: { "content-Type": "application/json" },
       body: JSON.stringify(formdata),
